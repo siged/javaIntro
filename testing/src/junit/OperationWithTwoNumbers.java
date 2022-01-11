@@ -9,6 +9,12 @@ import java.security.InvalidParameterException;
 
 public class OperationWithTwoNumbers {
 
+    public static void main(String[] args) {
+        OperationWithTwoNumbers operation = new OperationWithTwoNumbers();
+
+        operation.printJavaPrimitiveNumbers(500, "3");
+    }
+
     public int sumTwoNumbers(int firstNum, int secondNum) {
         return firstNum + secondNum;
     }
@@ -46,8 +52,8 @@ public class OperationWithTwoNumbers {
             System.out.println("This is not allowed");
         }
 
-        String[] primitiveWholeNumber = floatNumber.split(".");
-        String afterPointNumber;
+        String[] primitiveWholeNumber = floatNumber.split("\\.");
+        String afterPointNumber = null;
         long wholeNumber = Long.parseLong(primitiveWholeNumber[0]);
         String[] outputPrimitives = new String[5];
 
@@ -56,9 +62,9 @@ public class OperationWithTwoNumbers {
         } else if (floatLegth < 0) {
             floatNumber = "Float number can't be lower than zero";
         } else {
-
-            afterPointNumber = primitiveWholeNumber[1].substring(0, floatLegth);
-
+            if (primitiveWholeNumber[1] != null) {
+                afterPointNumber = primitiveWholeNumber[1].substring(0, floatLegth);
+            }
             if (wholeNumber < Byte.MAX_VALUE || wholeNumber > Byte.MIN_VALUE) {
                 outputPrimitives[0] = "Byte: overflow";
             } else {
