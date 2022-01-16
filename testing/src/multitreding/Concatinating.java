@@ -5,10 +5,15 @@ public class Concatinating implements Runnable {
     private String[] words;
 
     public static void main(String[] args) {
+        Concatinating concat = new Concatinating();
+        concat.words("kak", "e", "bace", "imash li", "mustaci");
 
         for (int i = 0; i < 5; i++) {
-            new Thread(new Concatinating()).setName(String.valueOf(i));
+            new Thread(new Concatinating());
+            Thread.currentThread().setName(String.valueOf(i));
             Thread.currentThread().start();
+
+
         }
     }
 
@@ -24,7 +29,6 @@ public class Concatinating implements Runnable {
 
     @Override
     public void run() {
-        this.words = new String[5];
         System.out.print(this.words[Integer.parseInt(Thread.currentThread().getName())]);
     }
 }
