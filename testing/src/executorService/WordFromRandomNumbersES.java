@@ -25,7 +25,7 @@ public class WordFromRandomNumbersES {
         while (word.length() < 10) {
                 letter = (char) random.nextInt(122);
                 if (letter >= 'A' && letter <= 'Z' || letter >= 'a' && letter <= 'z') {
-                    word += String.valueOf(letter);
+                    word += letter;
                 }
         }
         return word;

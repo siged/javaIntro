@@ -51,7 +51,7 @@ class RaceCondition implements Runnable {
             while (word.length() < 10) {
                 letter = (char) random.nextInt(122);
                 if (letter >= 'A' && letter <= 'Z' || letter >= 'a' && letter <= 'z') {
-                    word += String.valueOf(letter);
+                    word += letter;
                 }
             }
             //Thread.sleep(5000);
@@ -59,6 +59,7 @@ class RaceCondition implements Runnable {
             sb.append(word);
             sb.append(Thread.currentThread().getName());
             Thread.sleep(1000);
+            System.out.println(word);
             return word;
         }
         }
