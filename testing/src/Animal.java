@@ -1,3 +1,5 @@
+import interfaces.AnimalInterface;
+
 public class Animal implements AnimalInterface {
 
     private String kind;
